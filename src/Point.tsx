@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { SwatchRectRenderProps, SwatchProps } from '@uiw/react-color-swatch/esm/index';
 import { useRef } from 'react';
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 interface PointProps extends SwatchRectRenderProps {
   rectProps?: SwatchProps['rectProps'];
@@ -40,13 +41,24 @@ export default function Point({ style, title, checked, disabled, color, onClick,
         transition: 'transform 100ms ease 0s, box-shadow 100ms ease 0s',
       }}
     >
-      <div
+      {/* <div
         {...rectProps}
         style={{
           height: checked || disabled ? '100%' : 0,
           width: checked || disabled ? '100%' : 0,
           borderRadius: '50%',
           backgroundColor: disabled ?  'grey' : '#fff',
+          boxSizing: 'border-box',
+          transition: 'height 100ms ease 0s, width 100ms ease 0s',
+          ...rectProps!.style,
+        }}
+      /> */}
+      <CheckCircleRoundedIcon
+        {...rectProps}
+        style={{
+          height: checked ? '100%' : 0,
+          width: checked ? '100%' : 0,
+          borderRadius: '50%',
           boxSizing: 'border-box',
           transition: 'height 100ms ease 0s, width 100ms ease 0s',
           ...rectProps!.style,
