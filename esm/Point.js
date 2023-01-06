@@ -2,6 +2,7 @@ import _extends from "@babel/runtime/helpers/extends";
 import React, { useCallback } from 'react';
 import { useRef } from 'react';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import DoNotDisturbOnRoundedIcon from '@mui/icons-material/DoNotDisturbOnRounded';
 import { jsx as _jsx } from "react/jsx-runtime";
 export default function Point(_ref) {
   var {
@@ -41,7 +42,15 @@ export default function Point(_ref) {
       boxShadow: color + " 0px 0px " + (checked ? 5 : 0) + "px",
       transition: 'transform 100ms ease 0s, box-shadow 100ms ease 0s'
     }),
-    children: /*#__PURE__*/_jsx(CheckCircleRoundedIcon, _extends({}, rectProps, {
+    children: disabled ? /*#__PURE__*/_jsx(DoNotDisturbOnRoundedIcon, _extends({}, rectProps, {
+      style: _extends({
+        height: '100%',
+        width: '100%',
+        borderRadius: '50%',
+        boxSizing: 'border-box',
+        transition: 'height 100ms ease 0s, width 100ms ease 0s'
+      }, rectProps.style)
+    })) : /*#__PURE__*/_jsx(CheckCircleRoundedIcon, _extends({}, rectProps, {
       style: _extends({
         height: checked ? '100%' : 0,
         width: checked ? '100%' : 0,
