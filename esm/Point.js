@@ -45,7 +45,7 @@ export default function Point(_ref) {
         height: checked || disabled ? '100%' : 0,
         width: checked || disabled ? '100%' : 0,
         borderRadius: '50%',
-        backgroundColor: disabled ? 'ffffff88' : '#fff',
+        backgroundColor: disabled ? 'grey' : '#fff',
         boxSizing: 'border-box',
         transition: 'height 100ms ease 0s, width 100ms ease 0s'
       }, rectProps.style)
