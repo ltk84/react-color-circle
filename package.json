@@ -36,6 +36,6 @@
   "dependencies": {
     "@babel/runtime": "~7.19.0",
     "@uiw/color-convert": "1.1.1",
-    "@uiw/react-color-swatch": "1.1.1"
+    "@uiw/react-color-swatch": "github:ltk84/react-color-swatch"
   }
 }
