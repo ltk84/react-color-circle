@@ -21,7 +21,7 @@ export default function Point(_ref) {
   }, []);
   return /*#__PURE__*/_jsx("div", {
     ref: btn,
-    onClick: disabled == null ? undefined : onClick,
+    onClick: onClick,
     onMouseEnter: handleMouseEnter,
     onMouseLeave: handleMouseLeave,
     title: title,

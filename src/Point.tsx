@@ -19,7 +19,7 @@ export default function Point({ style, title, checked, disabled, color, onClick,
   return (
     <div
       ref={btn}
-      onClick={disabled == null ? undefined : onClick}
+      onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       title={title}
