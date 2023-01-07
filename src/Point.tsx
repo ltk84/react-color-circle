@@ -11,11 +11,15 @@ interface PointProps extends SwatchRectRenderProps {
 export default function Point({ style, title, checked, disabled, color, onClick, rectProps }: PointProps) {
   const btn = useRef<HTMLDivElement>(null);
   const handleMouseEnter = useCallback((evn) => {
-    btn.current!.style['transform'] = 'scale(1.2)';
+    if (!disabled) {
+      btn.current!.style['transform'] = 'scale(1.2)';
+    }
   }, []);
 
   const handleMouseLeave = useCallback((evn) => {
-    btn.current!.style['transform'] = 'scale(1)';
+    if (!disabled) {
+      btn.current!.style['transform'] = 'scale(1)';
+    }
   }, []);
 
   return (
@@ -32,7 +36,7 @@ export default function Point({ style, title, checked, disabled, color, onClick,
         justifyContent: 'center',
         width: 28,
         height: 28,
-        padding: 2,
+        padding: 1.5,
         borderRadius: '50%',
         marginRight: 12,
         marginBottom: 12,
@@ -45,6 +49,7 @@ export default function Point({ style, title, checked, disabled, color, onClick,
       { disabled ? 
         <DoNotDisturbOnRoundedIcon
           {...rectProps}
+          color='#dedede'
           style={{
             height: '100%',
             width: '100%',
@@ -56,6 +61,7 @@ export default function Point({ style, title, checked, disabled, color, onClick,
         /> :
         <CheckCircleRoundedIcon
           {...rectProps}
+          color='#fff'
           style={{
             height: checked ? '100%' : 0,
             width: checked ? '100%' : 0,

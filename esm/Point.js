@@ -16,10 +16,14 @@ export default function Point(_ref) {
   } = _ref;
   var btn = useRef(null);
   var handleMouseEnter = useCallback(evn => {
-    btn.current.style['transform'] = 'scale(1.2)';
+    if (!disabled) {
+      btn.current.style['transform'] = 'scale(1.2)';
+    }
   }, []);
   var handleMouseLeave = useCallback(evn => {
-    btn.current.style['transform'] = 'scale(1)';
+    if (!disabled) {
+      btn.current.style['transform'] = 'scale(1)';
+    }
   }, []);
   return /*#__PURE__*/_jsx("div", {
     ref: btn,
@@ -33,7 +37,7 @@ export default function Point(_ref) {
       justifyContent: 'center',
       width: 28,
       height: 28,
-      padding: 3,
+      padding: 1.5,
       borderRadius: '50%',
       marginRight: 12,
       marginBottom: 12,
@@ -43,6 +47,7 @@ export default function Point(_ref) {
       transition: 'transform 100ms ease 0s, box-shadow 100ms ease 0s'
     }),
     children: disabled ? /*#__PURE__*/_jsx(DoNotDisturbOnRoundedIcon, _extends({}, rectProps, {
+      color: "#dedede",
       style: _extends({
         height: '100%',
         width: '100%',
@@ -51,6 +56,7 @@ export default function Point(_ref) {
         transition: 'height 100ms ease 0s, width 100ms ease 0s'
       }, rectProps.style)
     })) : /*#__PURE__*/_jsx(CheckCircleRoundedIcon, _extends({}, rectProps, {
+      color: "#fff",
       style: _extends({
         height: checked ? '100%' : 0,
         width: checked ? '100%' : 0,
